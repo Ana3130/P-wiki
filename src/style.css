@@ -1,0 +1,208 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* APP CONTAINER */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR STYLES */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+  font-size: 16px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  color: #007bff;
+}
+
+/* SEARCH FORM IN SIDEBAR */
+.search-form {
+  margin-top: 20px;
+}
+
+.search-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* MAIN CONTENT AREA */
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  background-color: #ffffff;
+}
+
+/* HEADINGS & TEXT */
+.content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.content p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* ENTRY BLOCKS */
+.entry {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+/* LINKS INSIDE CONTENT */
+.content a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.content a:hover {
+  color: #0056b3;
+}
+
+/* MARKDOWN RENDERED CONTENT */
+.markdown p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.markdown strong {
+  font-weight: bold;
+}
+
+.markdown ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.markdown blockquote {
+  margin: 20px 0;
+  padding-left: 20px;
+  border-left: 4px solid #ddd;
+  font-style: italic;
+  color: #777;
+}
+
+/* FORM ELEMENTS (for New Entry or Edit pages) */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* BUTTONS */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* BUTTON GROUPS (e.g. on entry details page) */
+.details-buttons {
+  margin-top: 20px;
+}
+
+.details-buttons button {
+  margin-right: 10px;
+}
+
+/* LOADING / ERROR / NOT FOUND MESSAGES */
+.loading,
+.not-found,
+.error {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
+  color: #999;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+}

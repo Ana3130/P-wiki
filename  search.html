@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P-wiki - Search Results</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    //  სკრიპტი რომ წაიკითხოს query parameter-ები და გამოაჩინოს შედეგი
+    window.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get("q") || "";
+      const header = document.getElementById("search-header");
+      header.textContent = query ? "Search results for: " + query : "No search query provided.";
+      
+      
+      const resultsContainer = document.getElementById("results");
+      let resultsHTML = "";
+      if (query) {
+        
+        if (query.toLowerCase().includes("snow")) {
+          resultsHTML += `<div class="entry">
+            <h2><a href="entry-1.html">The World's Largest Snowflake</a></h2>
+            <div class="markdown">
+              <p>The largest snowflake ever recorded was reported in Montana, USA...</p>
+            </div>
+          </div>`;
+        }
+        if (query.toLowerCase().includes("heart")) {
+          resultsHTML += `<div class="entry">
+            <h2><a href="entry-2.html">Octopuses Have Three Hearts</a></h2>
+            <div class="markdown">
+              <p>Octopuses have three hearts: two for the gills and one for the rest of the body...</p>
+            </div>
+          </div>`;
+        }
+        
+        if (!resultsHTML) {
+          resultsHTML = "<p class='not-found'>No results found.</p>";
+        }
+      } else {
+        resultsHTML = "<p class='not-found'>Please enter a search query.</p>";
+      }
+      resultsContainer.innerHTML = resultsHTML;
+    });
+  </script>
+</head>
+<body>
+  <div class="app-container">
+ 
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="index.html">Entries</a></li>
+          <li><a href="bookmarks.html">Bookmarks</a></li>
+          <li><a href="new-entry.html">New Entry</a></li>
+        </ul>
+      </nav>
+      <form class="search-form" action="search.html" method="get">
+        <input type="text" name="q" placeholder="Search..." />
+      </form>
+    </aside>
+    
+  
+    <main class="content">
+      <h1 id="search-header">Search Results</h1>
+      <div id="results">
+        <!-- მოძებნის შედეგები დინამიურად ემატება აქ-->
+      </div>
+    </main>
+  </div>
+</body>
+</html>
